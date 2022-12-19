@@ -7,12 +7,19 @@ Design Page Objects and run Tests using TypeScript
 Clone the repository
 
 ```bash 
+git clone https://github.com/gequise/challengeAutomatiion.git
 ```
+Install Node.js
+
+[Node.js](https://nodejs.org/en/download/)
 
 Install dependencies
 
+
 ```bash
-yarn
+npm install -g yarn
+yarn install
+
 ```
 
 ## Run Test
