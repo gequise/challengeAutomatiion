@@ -19,6 +19,7 @@ Install dependencies
 ```bash
 npm install -g yarn
 yarn install
+npx playwright install
 
 ```
 
