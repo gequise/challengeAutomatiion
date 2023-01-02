@@ -16,9 +16,6 @@ test.describe('homepage has title and links to intro page', async () => {let mlP
   test('Navigate Page', async () => {
     await mlPage.navigateMl();
     await samsungPage.samsungPageNavigate()
-    // await samsungPage.assertValues()
-    // await expect(samsungPage.FirstPriceOption < samsungPage.SecondPriceOption)
-    // await expect(samsungPage.SecondPriceOption < samsungPage.ThirdPriceOption)
   })
 
 });
