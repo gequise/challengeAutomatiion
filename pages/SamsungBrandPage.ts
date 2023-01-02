@@ -10,7 +10,7 @@ export class SamsungBrandPage extends AbstractPage {
   readonly lowerPriceOption: Locator
   readonly FirstPriceOption: Locator
   readonly SecondPriceOption: Locator
-  readonly ThirdPriceOption: Locator
+  readonly LastPriceOption: Locator
   readonly ItemOptions: Locator
 
 
@@ -23,7 +23,7 @@ export class SamsungBrandPage extends AbstractPage {
     this.lowerPriceOption = page.getByRole('option', { name: 'Menor precio' })
     this.FirstPriceOption = page.locator('//span[contains(@class,"price-tag-fraction")]')
     this.SecondPriceOption = page.locator('//span[contains(@class,"price-tag-fraction")]')
-    this.ThirdPriceOption = page.locator('//span[contains(@class,"price-tag-fraction")]')
+    this.LastPriceOption = page.locator('//span[contains(@class,"price-tag-fraction")]')
     this.ItemOptions = page.locator('//li[contains(@class,"ui-search-layout__item shops__layout-item")]')
   }
 
@@ -40,8 +40,8 @@ export class SamsungBrandPage extends AbstractPage {
     console.log("SecondPrice: ", secondPrice )
     expect(Number(firstPrice)).toBeLessThanOrEqual(Number(secondPrice))
     await this.ItemOptions.last().screenshot({path: 'thirdPrice.png'})
-    const thirdPrice = await (await this.ThirdPriceOption.last().innerText()).replace(".", "")
-    console.log("ThirdPrice: ", thirdPrice )
+    const lastPriceOption = await (await this.LastPriceOption.last().innerText()).replace(".", "")
+    console.log("ThirdPrice: ", lastPriceOption )
 
   }
 
