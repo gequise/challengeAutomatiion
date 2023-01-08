@@ -18,6 +18,9 @@ test.describe("homepage has title and links to intro page", async () => {
     await mlPage.navigateMl();
     const { firstPrice, secondPrice, lastPriceOption } =
       await samsungPage.samsungPageNavigate();
+    await test.step('Prices List', async() =>{
+      	return console.log("Prices: ",'\n', firstPrice,'\n', secondPrice, '\n', lastPriceOption)
+    })
     expect(Number(firstPrice)).toBeLessThanOrEqual(Number(secondPrice));
     expect(Number(secondPrice)).toBeLessThanOrEqual(Number(lastPriceOption));
   });

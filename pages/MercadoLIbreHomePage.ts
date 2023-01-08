@@ -8,7 +8,7 @@ export class MercadoLibreHomePage extends AbstractPage {
   readonly categoryLink: Locator
   readonly technologyOption: Locator
   readonly cellAndPhonesOption: Locator
-
+  readonly cpa: Locator
 
   constructor(page: Page){
     super(page);
@@ -16,6 +16,7 @@ export class MercadoLibreHomePage extends AbstractPage {
     this.categoryLink = page.locator('//a[@class="nav-menu-categories-link"]')
     this.technologyOption = page.locator('//a[normalize-space()="Tecnología"]')
     this.cellAndPhonesOption = page.locator('text=Smartphones')
+    this.cpa = page.locator('//a[@class="nav-menu-cp nav-menu-cp-logged"]')
     
 
   }
@@ -26,6 +27,8 @@ export class MercadoLibreHomePage extends AbstractPage {
   }
 
   async navigateMl(){
+    await this.cpa.click()
+    await this.page.keyboard.press('Escape')
     await this.categoryLink.click()
     await this.technologyOption.hover()
     await this.cellAndPhonesOption.click()
