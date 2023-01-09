@@ -1,7 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { MercadoLibreHomePage } from "../pages/MercadoLIbreHomePage";
 import { SamsungBrandPage } from "../pages/SamsungBrandPage";
-import { default as pageData } from "../resources/pageData.json";
 
 test.describe("homepage has title and links to intro page", async () => {
   let mlPage: MercadoLibreHomePage;
