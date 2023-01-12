@@ -4,7 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "@playwright/test": "^1.29.0"
+    "@playwright/test": "^1.29.0",
+    "prettier": "2.5.1"
   },
-  "scripts": {}
+  "scripts": {
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\""
+  }
 }

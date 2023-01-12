@@ -1,6 +1,6 @@
-import { Locator, Page } from "@playwright/test";
-import { AbstractPage } from "./AbastractPage";
-import locators  from "../locators/mercadoLibrePage.json"
+import { Locator, Page } from '@playwright/test';
+import { AbstractPage } from './AbastractPage';
+import locators from '../locators/mercadoLibrePage.json';
 
 export class MercadoLibreHomePage extends AbstractPage {
   readonly page: Page;
@@ -19,9 +19,9 @@ export class MercadoLibreHomePage extends AbstractPage {
   }
 
   async navigateMl() {
-    await this.page.goto("/");
+    await this.page.goto('/');
     await this.cpa.click();
-    await this.page.keyboard.press("Escape");
+    await this.page.keyboard.press('Escape');
     await this.categoryLink.click();
     await this.technologyOption.hover();
     await this.cellAndPhonesOption.click();

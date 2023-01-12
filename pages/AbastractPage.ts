@@ -1,13 +1,13 @@
-import { Page } from '@playwright/test'
+import { Page } from '@playwright/test';
 
 export class AbstractPage {
-  readonly page: Page
+  readonly page: Page;
 
   constructor(page: Page) {
-    this.page = page
+    this.page = page;
   }
 
   async wait(time) {
-    await this.page.waitForTimeout(time)
+    await this.page.waitForTimeout(time);
   }
 }

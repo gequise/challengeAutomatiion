@@ -1,6 +1,6 @@
-import { Locator, Page } from "@playwright/test";
-import { AbstractPage } from "./AbastractPage";
-import locators from "../locators/mercadoLibrePage.json"
+import { Locator, Page } from '@playwright/test';
+import { AbstractPage } from './AbastractPage';
+import locators from '../locators/mercadoLibrePage.json';
 
 export class SamsungBrandPage extends AbstractPage {
   readonly page: Page;
@@ -14,18 +14,16 @@ export class SamsungBrandPage extends AbstractPage {
   constructor(page: Page) {
     super(page);
     this.page = page;
-    this.desiredSearch = page.getByRole("link", {
-      name: locators.desiredSearch_Input
+    this.desiredSearch = page.getByRole('link', {
+      name: locators.desiredSearch_Input,
     });
     this.brandOption = page.locator(locators.brand_Option);
-    this.orderByDropDown = page.locator(locators.orderby_DropDown
-    );
-    this.lowerPriceOption = page.getByRole("option", { name: locators.lowerPrice_Option });
-    this.priceOption = page.locator(locators.price_Option
-      );
-    this.ItemOptions = page.locator(locators.item_Option
-      
-    );
+    this.orderByDropDown = page.locator(locators.orderby_DropDown);
+    this.lowerPriceOption = page.getByRole('option', {
+      name: locators.lowerPrice_Option,
+    });
+    this.priceOption = page.locator(locators.price_Option);
+    this.ItemOptions = page.locator(locators.item_Option);
   }
 
   async samsungPageNavigate() {
@@ -37,10 +35,10 @@ export class SamsungBrandPage extends AbstractPage {
     const secondPrice = await this.priceOption.nth(1).textContent();
     const lastPriceOption = await (
       await this.priceOption.last().innerText()
-    ).replace(".", "");
-    await this.ItemOptions.first().screenshot({ path: "firstPrice.png" });
-    await this.ItemOptions.nth(1).screenshot({ path: "secondPrice.png" });
-    await this.ItemOptions.last().screenshot({ path: "lastPrice.png" });
+    ).replace('.', '');
+    await this.ItemOptions.first().screenshot({ path: 'firstPrice.png' });
+    await this.ItemOptions.nth(1).screenshot({ path: 'secondPrice.png' });
+    await this.ItemOptions.last().screenshot({ path: 'lastPrice.png' });
     return { firstPrice, secondPrice, lastPriceOption };
   }
 }
