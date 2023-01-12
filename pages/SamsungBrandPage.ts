@@ -1,5 +1,6 @@
-import { expect, Locator, Page } from "@playwright/test";
+import { Locator, Page } from "@playwright/test";
 import { AbstractPage } from "./AbastractPage";
+import locators from "../locators/mercadoLibrePage.json"
 
 export class SamsungBrandPage extends AbstractPage {
   readonly page: Page;
@@ -7,33 +8,23 @@ export class SamsungBrandPage extends AbstractPage {
   readonly brandOption: Locator;
   readonly orderByDropDown: Locator;
   readonly lowerPriceOption: Locator;
-  readonly FirstPriceOption: Locator;
-  readonly SecondPriceOption: Locator;
-  readonly LastPriceOption: Locator;
+  readonly priceOption: Locator;
   readonly ItemOptions: Locator;
 
   constructor(page: Page) {
     super(page);
     this.page = page;
     this.desiredSearch = page.getByRole("link", {
-      name: "1º MÁS DESEADA Primera imagen para búsqueda de samsung Segunda imagen para búsqueda de samsung Tercera imagen para búsqueda de samsung Samsung",
+      name: locators.desiredSearch_Input
     });
-    this.brandOption = page.locator(".ui-search-carousel__item");
-    this.orderByDropDown = page.locator(
-      '//span[@class="andes-dropdown__display-values"]'
+    this.brandOption = page.locator(locators.brand_Option);
+    this.orderByDropDown = page.locator(locators.orderby_DropDown
     );
-    this.lowerPriceOption = page.getByRole("option", { name: "Menor precio" });
-    this.FirstPriceOption = page.locator(
-      '//span[contains(@class,"price-tag-fraction")]'
-    );
-    this.SecondPriceOption = page.locator(
-      '//span[contains(@class,"price-tag-fraction")]'
-    );
-    this.LastPriceOption = page.locator(
-      '//span[contains(@class,"price-tag-fraction")]'
-    );
-    this.ItemOptions = page.locator(
-      '//li[contains(@class,"ui-search-layout__item shops__layout-item")]'
+    this.lowerPriceOption = page.getByRole("option", { name: locators.lowerPrice_Option });
+    this.priceOption = page.locator(locators.price_Option
+      );
+    this.ItemOptions = page.locator(locators.item_Option
+      
     );
   }
 
@@ -42,10 +33,10 @@ export class SamsungBrandPage extends AbstractPage {
     await this.brandOption.first().click();
     await this.orderByDropDown.click();
     await this.lowerPriceOption.click();
-    const firstPrice = await this.FirstPriceOption.first().textContent();
-    const secondPrice = await this.SecondPriceOption.nth(1).textContent();
+    const firstPrice = await this.priceOption.first().textContent();
+    const secondPrice = await this.priceOption.nth(1).textContent();
     const lastPriceOption = await (
-      await this.LastPriceOption.last().innerText()
+      await this.priceOption.last().innerText()
     ).replace(".", "");
     await this.ItemOptions.first().screenshot({ path: "firstPrice.png" });
     await this.ItemOptions.nth(1).screenshot({ path: "secondPrice.png" });

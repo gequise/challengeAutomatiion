@@ -1,5 +1,6 @@
 import { Locator, Page } from "@playwright/test";
 import { AbstractPage } from "./AbastractPage";
+import locators  from "../locators/mercadoLibrePage.json"
 
 export class MercadoLibreHomePage extends AbstractPage {
   readonly page: Page;
@@ -11,10 +12,10 @@ export class MercadoLibreHomePage extends AbstractPage {
   constructor(page: Page) {
     super(page);
     this.page = page;
-    this.categoryLink = page.locator('//a[@class="nav-menu-categories-link"]');
-    this.technologyOption = page.locator('//a[normalize-space()="Tecnología"]');
-    this.cellAndPhonesOption = page.locator("text=Smartphones");
-    this.cpa = page.locator('//a[@class="nav-menu-cp nav-menu-cp-logged"]');
+    this.categoryLink = page.locator(locators.category_Link);
+    this.technologyOption = page.locator(locators.technology_Option);
+    this.cellAndPhonesOption = page.locator(locators.cellandphones_Option);
+    this.cpa = page.locator(locators.cpa_popup);
   }
 
   async navigateMl() {

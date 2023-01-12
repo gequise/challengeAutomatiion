@@ -1,0 +1,12 @@
+{
+  "category_Link": "//a[@class='nav-menu-categories-link']",
+  "technology_Option": "//a[normalize-space()='Tecnología']",
+  "cellandphones_Option": "text=Smartphones",
+  "cpa_popup": "//a[@class='nav-menu-cp nav-menu-cp-logged']",
+  "desiredSearch_Input": "1º MÁS DESEADA Primera imagen para búsqueda de samsung Segunda imagen para búsqueda de samsung Tercera imagen para búsqueda de samsung Samsung",
+  "brand_Option": ".ui-search-carousel__item",
+  "orderby_DropDown": "//span[@class='andes-dropdown__display-values']",
+  "lowerPrice_Option": "Menor precio",
+  "price_Option": "//span[contains(@class,'price-tag-fraction')]",
+  "item_Option": "//li[contains(@class,'ui-search-layout__item shops__layout-item')]"
+}
