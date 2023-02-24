@@ -1,5 +1,5 @@
 import { Locator, Page } from '@playwright/test';
-import { AbstractPage } from './AbastractPage';
+import { AbstractPage } from './AbstractPage';
 import locators from '../locators/mercadoLibrePage.json';
 
 export class SamsungBrandPage extends AbstractPage {
