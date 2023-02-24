@@ -14,9 +14,7 @@ export class SamsungBrandPage extends AbstractPage {
   constructor(page: Page) {
     super(page);
     this.page = page;
-    this.desiredSearch = page.getByRole('link', {
-      name: locators.desiredSearch_Input,
-    });
+    this.desiredSearch = page.locator(locators.desiredSearch_Input);
     this.brandOption = page.locator(locators.brand_Option);
     this.orderByDropDown = page.locator(locators.orderby_DropDown);
     this.lowerPriceOption = page.getByRole('option', {
@@ -27,8 +25,8 @@ export class SamsungBrandPage extends AbstractPage {
   }
 
   async samsungPageNavigate() {
-    await this.desiredSearch.click();
-    await this.brandOption.first().click();
+    await this.desiredSearch.nth(0).click();
+    // await this.brandOption.first().click();
     await this.orderByDropDown.click();
     await this.lowerPriceOption.click();
     const firstPrice = await this.priceOption.first().textContent();

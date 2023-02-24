@@ -3,7 +3,7 @@
   "technology_Option": "//a[normalize-space()='Tecnología']",
   "cellandphones_Option": "text=Smartphones",
   "cpa_popup": "//a[@class='nav-menu-cp']",
-  "desiredSearch_Input": "1º MÁS DESEADA Primera imagen para búsqueda de samsung Segunda imagen para búsqueda de samsung Tercera imagen para búsqueda de samsung Samsung",
+  "desiredSearch_Input": "//div[@class='andes-card__content']",
   "brand_Option": ".ui-search-carousel__item",
   "orderby_DropDown": "//span[@class='andes-dropdown__display-values']",
   "lowerPrice_Option": "Menor precio",
