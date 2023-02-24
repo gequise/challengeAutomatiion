@@ -1,5 +1,5 @@
 import { Locator, Page } from '@playwright/test';
-import { AbstractPage } from './AbastractPage';
+import { AbstractPage } from './AbstractPage';
 import locators from '../locators/mercadoLibrePage.json';
 
 export class MercadoLibreHomePage extends AbstractPage {
@@ -14,7 +14,7 @@ export class MercadoLibreHomePage extends AbstractPage {
     this.page = page;
     this.categoryLink = page.locator(locators.category_Link);
     this.technologyOption = page.locator(locators.technology_Option);
-    this.cellAndPhonesOption = page.locator(locators.cellandphones_Option);
+    this.cellAndPhonesOption = page.locator(locators.cell_and_phones_Option);
     this.cpa = page.locator(locators.cpa_popup);
   }
 

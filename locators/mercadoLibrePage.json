@@ -1,7 +1,7 @@
 {
   "category_Link": "//a[@class='nav-menu-categories-link']",
   "technology_Option": "//a[normalize-space()='Tecnología']",
-  "cellandphones_Option": "text=Smartphones",
+  "cell_and_phones_Option": "text=Smartphones",
   "cpa_popup": "//a[@class='nav-menu-cp']",
   "desiredSearch_Input": "//div[@class='andes-card__content']",
   "brand_Option": ".ui-search-carousel__item",
