@@ -26,7 +26,6 @@ export class SamsungBrandPage extends AbstractPage {
 
   async samsungPageNavigate() {
     await this.desiredSearch.nth(0).click();
-    // await this.brandOption.first().click();
     await this.orderByDropDown.click();
     await this.lowerPriceOption.click();
     const firstPrice = await this.priceOption.first().textContent();

@@ -5,7 +5,7 @@
   "cpa_popup": "//a[@class='nav-menu-cp']",
   "desiredSearch_Input": "//div[@class='andes-card__content']",
   "brand_Option": ".ui-search-carousel__item",
-  "orderby_DropDown": "//span[@class='andes-dropdown__display-values']",
+  "orderby_DropDown": "//div[@class='ui-search-sort-filter shops__sort-filter']",
   "lowerPrice_Option": "Menor precio",
   "price_Option": "//span[contains(@class,'price-tag-fraction')]",
   "item_Option": "//li[contains(@class,'ui-search-layout__item shops__layout-item')]"
